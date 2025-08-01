@@ -1,6 +1,4 @@
-﻿using Microsoft.Maui.Controls;
-
-namespace BuggyTasks.Views;
+﻿namespace BuggyTasks.Views;
 
 public partial class MainPage : ContentPage
 {
@@ -11,12 +9,21 @@ public partial class MainPage : ContentPage
 
     async void OnGoToTaskList(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("tasklist"); 
+        await Shell.Current.GoToAsync(nameof(TaskListPage));
     }
 
     async void OnAddTask(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("NewTaskPage");
+        await Shell.Current.GoToAsync(nameof(NewTaskPage));
     }
-    
+
+    async void OnGetLocation(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(LocationPage));
+    }
+
+    async void OnDeviceInfo(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(DeviceInfoPage));
+    }
 }
